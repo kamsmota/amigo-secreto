@@ -1,16 +1,22 @@
 let amigos = [];
 
-function adicionarAmigo (){
-    novoAmigo = document.getElementById('amigo')
+function adicionarAmigo(){
+    let novoAmigo = document.getElementById('amigo');
     if (novoAmigo =! ''){
-        amigos.push(novoAmigo);
+        amigos.push();
+        exibirAmigos('listarAmigos', amigos)
     } else {
-        return ('insira um nome válido, o campo não pode estar vazio');
+        alert('insira um nome válido, o campo não pode estar vazio');
     }
-    limparCampos();;
+    limparCampos();
 }
 
 function limparCampos(){
-    novoAmigo = document.getElementById('amigo');
+    let novoAmigo = document.getElementById('amigo');
     novoAmigo.value = '';
+}
+
+function exibirAmigos(tag, texto){
+    let campo = document.getElementById(tag);
+    campo.innerHTML = texto;
 }
